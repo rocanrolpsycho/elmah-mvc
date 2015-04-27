@@ -63,7 +63,7 @@ namespace Elmah.Mvc
                 null,
                 namespaces);
 
-            if (elmahRoute != "elmah" && Settings.IgnoreDefaultRoute)
+            if (Settings.IgnoreDefaultRoute)
             {
                 routes.IgnoreRoute("elmah");
                 routes.IgnoreRoute("elmah/{*pathinfo}");
