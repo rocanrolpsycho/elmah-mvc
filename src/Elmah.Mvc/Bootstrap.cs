@@ -65,9 +65,9 @@ namespace Elmah.Mvc
 
             if (elmahRoute != "elmah" && Settings.IgnoreDefaultRoute)
             {
-                routes.IgnoreRoute("elmah");
-                routes.IgnoreRoute("elmah/{*pathinfo}");
-                routes.IgnoreRoute("{*elmahinsubfolder}", new { elmahinsubfolder = @".*/elmah(/.*)?" });
+                routes.IgnoreRoute(elmahRoute);
+                routes.IgnoreRoute(elmahRoute + "/{*pathinfo}");
+                routes.IgnoreRoute("{*elmahinsubfolder}", new { elmahinsubfolder = string.Format(@".*/{0}(/.*)?", elmahRoute) });
             }
         }
     }
